@@ -53,8 +53,12 @@ while True:
                 # Randomize the questions.
                 random.shuffle(question_set)
 
+                # Limits the number of questions to be ask.
+                amount_questions = 2
+                selected_questions = question_set[:min(amount_questions, len(question_set))]
+
                 # List down the question.
-                for number_question, question in enumerate(question_set, 0):
+                for number_question, question in enumerate(selected_questions, 0):
                     print(f"{number_question + 1}.) {question['question']}\n")
 
                     # List down the choices.
