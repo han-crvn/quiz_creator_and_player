@@ -57,7 +57,18 @@ while True:
                     for number_choice, choices in question['choices'].items():
                         print(f"{number_choice}. {choices}")
 
+                    # Allow users to input their answer.
+                    chosen_answer = input("\nEnter the letter of correct answer: ")
+
+                    # Access correct answer.
+                    correct_answer = question['answer']
                     
+                    # Verify if answer is correct.
+                    if chosen_answer.upper() == correct_answer.upper():
+                        print("Right!")
+
+                    else:
+                        print("Wrong!")
 
             #Catch invalid input.
             except ValueError:
