@@ -67,6 +67,10 @@ while True:
                 # Ask for the name of the users.
                 users_name = input("Enter your name: ")
 
+                # Initialize user data if not present
+                if users_name not in data_infos:
+                    data_infos[users_name] = []
+
                 # Randomize the questions.
                 random.shuffle(question_set)
 
@@ -107,7 +111,7 @@ while True:
                     print(f"Better Luck Next Time {users_name.title()}! You got {score}/{amount_questions}.")
 
                 data_infos[users_name].append({
-                    "Name": users_name,
+                    "Category": category_name,
                     "Score": score,
                 })
 
