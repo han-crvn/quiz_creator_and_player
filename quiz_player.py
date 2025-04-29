@@ -32,7 +32,7 @@ score = 0
 while True:
     try:
         print("\nSelection:")
-        print("1. Play a Quiz \n2. Exit \n")
+        print("1. Play a Quiz \n2. View History \n3. Exit \n")
         
         # Allow users to input their choice.
         choice = int(input("Enter the number of your choice: "))
@@ -122,10 +122,15 @@ while True:
             except ValueError:
                 print("Invalid input! try again.\n")
 
-        # If users choose option2, allow them to leave the program.
-        if choice == 2:
+        # If users choose option 2, allow them to access the history of users.
+        elif choice == 2:
+            pass
+
+        # If users choose option 3, allow them to leave the program.
+        elif choice == 3:
             break
-    
+
     # Catch invalid input.
     except ValueError:
         print("Invalid input! try again.\n")
+
