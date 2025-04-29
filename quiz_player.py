@@ -14,6 +14,17 @@ if os.path.exists(file_name):
 else:
     data = {}
 
+# File location of the data information.
+data_information = "data_information.json"
+
+# Access the file.
+if os.path.exists(data_information):
+    with open(data_information, "r") as file:
+        data_infos = json.load(file)
+
+else:
+    data_infos = {}
+
 # Add variables for score.
 score = 0
 
@@ -94,6 +105,14 @@ while True:
 
                 elif score <= 2:
                     print(f"Better Luck Next Time {users_name.title()}! You got {score}/{amount_questions}.")
+
+                data_infos[users_name].append({
+                    "Name": users_name,
+                    "Score": score,
+                })
+
+                with open(data_information, "w") as file:
+                    json.dump(data_infos, file, indent = 4)
 
             #Catch invalid input.
             except ValueError:
