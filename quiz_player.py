@@ -111,7 +111,7 @@ while True:
                     print(f"Better Luck Next Time {users_name.title()}! You got {score}/{amount_questions}.")
 
                 data_infos[users_name].append({
-                    "Category": category_name,
+                    "Category": chosen,
                     "Score": score,
                 })
 

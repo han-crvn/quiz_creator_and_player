@@ -1,11 +1,8 @@
 {
     "Shane": [
         {
-            "Category": [
-                "Science",
-                "Mathematics"
-            ],
-            "Score": 1
+            "Category": "Science",
+            "Score": 5
         }
     ]
 }
