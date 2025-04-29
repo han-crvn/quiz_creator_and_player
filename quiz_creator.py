@@ -54,6 +54,12 @@ while True:
             for number, category in enumerate(data.keys(), 1):
                 print(f"{number}. {category}")
 
+            try: 
+                selected_choice = int(input("\nEnter the number of the chosen category: "))
+
+            except ValueError:
+                print("Invalid input! try again.\n")
+                
             break
 
         # If users choose option 3, allow them to exit the program.
