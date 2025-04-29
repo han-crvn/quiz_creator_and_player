@@ -45,7 +45,7 @@ while True:
                         json.dump(data, file, indent = 4)
 
                 else:
-                    print(f"{category} already exists.")
+                    print(f"{category} already exists.\n")
 
                 break
 
@@ -57,7 +57,7 @@ while True:
                 print("\nThere are currently no categories.\n")
                 continue
             
-            # List down the categories
+            # List down the categories.
             print("\nCategories: ")
             for number, category in enumerate(data.keys(), 1):
                 print(f"{number}. {category}")
@@ -96,7 +96,7 @@ while True:
                             break
 
                         else:
-                           print("Invalid answer! try again.")
+                           print("Invalid answer! try again.\n")
                     
                     # Add the question set to the chosen category.
                     data[category_name].append({
