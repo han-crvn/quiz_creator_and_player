@@ -9,6 +9,46 @@
                 "D": "Ribs"
             },
             "answer": "A"
+        },
+        {
+            "question": "What is the boiling point of water at sea level?",
+            "choices": {
+                "A": "90 degree",
+                "B": "100 degree",
+                "C": "110 degree",
+                "D": "0 degree"
+            },
+            "answer": "B"
+        },
+        {
+            "question": "Which part of the cell contains the genetic material?",
+            "choices": {
+                "A": "Nucleus",
+                "B": "Mitochondria",
+                "C": "Cellulous",
+                "D": "Cytoplasm"
+            },
+            "answer": "A"
+        },
+        {
+            "question": "a",
+            "choices": {
+                "A": "a",
+                "B": "a",
+                "C": "a",
+                "D": "s"
+            },
+            "answer": "A"
+        },
+        {
+            "question": "a",
+            "choices": {
+                "A": "a",
+                "B": "a",
+                "C": "a",
+                "D": "a"
+            },
+            "answer": "A"
         }
     ]
 }
