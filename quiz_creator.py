@@ -23,19 +23,23 @@ while True:
         # If users choose option 1, allow them to add category.
         if choice == 1:
             while True:
+                
+                # Allow users to add category and format it to title case.
                 category = input("\nEnter the name of the category (0 to go back in main menu): ")
                 category = category.title()
 
+                # Check if the category is existing or not.
                 if category not in data:
                     data[category] = []
                     print(f"{category} is successfully added!\n")
 
+                    # Add the category to the file.
                     with open(file_name, "w") as file:
                         json.dump(data, file, indent = 4)
 
                 else:
                     print(f"{category} already exists.")
-                    
+
         # If users choose option 2, allow them to access category and add question set.
         elif choice == 2:
             pass
