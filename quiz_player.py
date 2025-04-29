@@ -131,9 +131,35 @@ while True:
                 continue
             
             # List down the names.
-            print("\nUsers: ")
+            print("\nUsers' History: ")
             for number, name in enumerate(data_infos.keys(), 1):
                 print(f"{number}. {name}")
+
+            try: 
+                # Allow users to choose from names.
+                selected_name = int(input("\nEnter the number of the chosen users' name: "))
+
+                # Access the name.
+                access_users = list(data_infos.keys())
+
+                if 1 <= selected_name <= len(access_users):
+                    chosen_name = access_users[selected_name - 1]
+                    users_data = data_infos[chosen_name]
+
+                    # Check the history of the users and print it.
+                    if users_data:
+                        print(f"\n{name}'s history: ")
+
+                        # List down their history.
+                        for number_entry, entry in enumerate(users_data, 1):
+                            print(f"{number_entry}. Category: {entry['Category']} - Score: {entry['Score']}/5")
+                
+                # Catch invalid input.
+                else:
+                    print("Invalid selection. Please enter a valid number.")
+            # Catch invalid input.
+            except ValueError:
+                print("Invalid input! try again.\n")
 
         # If users choose option 3, allow them to leave the program.
         elif choice == 3:
