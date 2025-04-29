@@ -65,6 +65,40 @@ while True:
                 # Add short message.
                 print(f"{category_name} is successfully chosen.\n")
 
+                while True:
+
+                    # Enter the question.
+                    question = input("Enter the question: ")
+
+                    # Enter the choices.
+                    choices = {}
+                    for number in range(4):
+                        option = chr(65 + number)
+                        choices[option] = input(f"Enter choice '{option}': ")
+                    
+                    # Enter the correct answer.
+                    while True:
+                        answer = input("Enter the correct answer: ").upper()
+
+                        # Check if the answer is in the choices.
+                        if answer in choices:
+                            break
+
+                        else:
+                           print("Invalid answer! try again.")
+                    
+                    # Add the question set to the chosen category.
+                    data[category_name].append({
+                        "question": question,
+                        "choices": choices,
+                        "answer": answer
+                    })
+
+                    with open(file_name, "w") as file:
+                        json.dump(data, file, indent = 4)
+
+                    break
+
             # Catch invalid input.
             except ValueError:
                 print("Invalid input! try again.\n")

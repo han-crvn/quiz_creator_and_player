@@ -1,3 +1,14 @@
 {
-    "Science": []
+    "Science": [
+        {
+            "question": "What is the largest bone in human body?",
+            "choices": {
+                "A": "Femur",
+                "B": "Fubula",
+                "C": "Skull",
+                "D": "Ribs"
+            },
+            "answer": "A"
+        }
+    ]
 }
