@@ -124,7 +124,16 @@ while True:
 
         # If users choose option 2, allow them to access the history of users.
         elif choice == 2:
-            pass
+            
+            # Check if there is names in file.
+            if not data_infos:
+                print("\nThere are currently no entry.\n")
+                continue
+            
+            # List down the names.
+            print("\nUsers: ")
+            for number, name in enumerate(data_infos.keys(), 1):
+                print(f"{number}. {name}")
 
         # If users choose option 3, allow them to leave the program.
         elif choice == 3:
@@ -133,4 +142,3 @@ while True:
     # Catch invalid input.
     except ValueError:
         print("Invalid input! try again.\n")
-
