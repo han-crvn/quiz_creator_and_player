@@ -2,6 +2,7 @@
 import os
 import json
 import random
+import time
 
 # File location of the categories.
 file_name = "categories.json"
@@ -110,9 +111,11 @@ while True:
                 elif score <= 2:
                     print(f"Better Luck Next Time {users_name.title()}! You got {score}/{amount_questions}.")
 
+                # Append the data to data information.
                 data_infos[users_name].append({
                     "Category": chosen,
                     "Score": score,
+                    "Date": time.ctime()
                 })
 
                 with open(data_information, "w") as file:
@@ -152,11 +155,12 @@ while True:
 
                         # List down their history.
                         for number_entry, entry in enumerate(users_data, 1):
-                            print(f"{number_entry}. Category: {entry['Category']} - Score: {entry['Score']}/5")
+                            print(f"{number_entry}. Category: {entry['Category']}\n   Score: {entry['Score']}/5\n   Date: {entry['Date']}")
                 
                 # Catch invalid input.
                 else:
                     print("Invalid selection. Please enter a valid number.")
+
             # Catch invalid input.
             except ValueError:
                 print("Invalid input! try again.\n")
