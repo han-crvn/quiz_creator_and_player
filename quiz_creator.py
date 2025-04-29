@@ -49,17 +49,26 @@ while True:
             if not data:
                 print("\nThere are currently no categories.\n")
                 continue
-
+            
+            # List down the categories
             print("\nCategories: ")
             for number, category in enumerate(data.keys(), 1):
                 print(f"{number}. {category}")
 
             try: 
+                # Allow users to choose from categories.
                 selected_choice = int(input("\nEnter the number of the chosen category: "))
 
+                # Access the category
+                category_name = list(data.keys())[selected_choice -1]
+                
+                # Add short message.
+                print(f"{category_name} is successfully chosen.\n")
+
+            # Catch invalid input.
             except ValueError:
                 print("Invalid input! try again.\n")
-                
+
             break
 
         # If users choose option 3, allow them to exit the program.
