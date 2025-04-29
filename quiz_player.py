@@ -50,8 +50,8 @@ while True:
                 print(f"{category_name} is successfully chosen.\n")
                 
                 # List down the question.
-                for number_question, question in enumerate(question_set, 1):
-                    print(f"{number}.) {question['question']}\n")
+                for number_question, question in enumerate(question_set, 0):
+                    print(f"{number_question + 1}.) {question['question']}\n")
 
                     # List down the choices.
                     for number_choice, choices in question['choices'].items():
