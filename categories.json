@@ -29,26 +29,6 @@
                 "D": "Cytoplasm"
             },
             "answer": "A"
-        },
-        {
-            "question": "a",
-            "choices": {
-                "A": "a",
-                "B": "a",
-                "C": "a",
-                "D": "s"
-            },
-            "answer": "A"
-        },
-        {
-            "question": "a",
-            "choices": {
-                "A": "a",
-                "B": "a",
-                "C": "a",
-                "D": "a"
-            },
-            "answer": "A"
         }
     ]
 }
