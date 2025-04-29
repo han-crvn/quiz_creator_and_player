@@ -29,6 +29,118 @@
                 "D": "Cytoplasm"
             },
             "answer": "A"
+        },
+        {
+            "question": "What is the primary gas responsible for the greenhouse effect?",
+            "choices": {
+                "A": "Oxygen",
+                "B": "Hydrogen",
+                "C": "Nitrogen",
+                "D": "Carbon Dioxide"
+            },
+            "answer": "D"
+        },
+        {
+            "question": "What is the chemical symbol for gold?",
+            "choices": {
+                "A": "Ag",
+                "B": "Au",
+                "C": "G",
+                "D": "Gd"
+            },
+            "answer": "B"
+        },
+        {
+            "question": "How many bones are there in the adult human body?",
+            "choices": {
+                "A": "107",
+                "B": "205",
+                "C": "206",
+                "D": "216"
+            },
+            "answer": "C"
+        },
+        {
+            "question": "What is the freezing point of water?",
+            "choices": {
+                "A": "0 degree",
+                "B": "1000 degree",
+                "C": "-10 degree",
+                "D": "12.5 degree"
+            },
+            "answer": "A"
+        },
+        {
+            "question": "What is the basic unit of living organisms?",
+            "choices": {
+                "A": "Cell",
+                "B": "Genes",
+                "C": "Nucleus",
+                "D": "Chromosome"
+            },
+            "answer": "A"
+        },
+        {
+            "question": "Which of this is not a state of matter?",
+            "choices": {
+                "A": "Solid",
+                "B": "Gas",
+                "C": "Liquid",
+                "D": "Energy"
+            },
+            "answer": "D"
+        },
+        {
+            "question": "What is th epH level of a neutral substance?",
+            "choices": {
+                "A": "1",
+                "B": "14",
+                "C": "10",
+                "D": "7"
+            },
+            "answer": "D"
+        },
+        {
+            "question": "What is the force that pulls every at the centre of earth?",
+            "choices": {
+                "A": "Gravity",
+                "B": "Centrifugal Force",
+                "C": "Normal Force",
+                "D": "Tension Force"
+            },
+            "answer": "A"
+        }
+    ],
+    "Mathematics": [
+        {
+            "question": "1 + 1",
+            "choices": {
+                "A": "2",
+                "B": "3",
+                "C": "4",
+                "D": "1"
+            },
+            "answer": "A"
+        },
+        {
+            "question": "10/2",
+            "choices": {
+                "A": "4",
+                "B": "5",
+                "C": "3",
+                "D": "2"
+            },
+            "answer": "B"
+        },
+        {
+            "question": "(1 + 4 + 7 + 8) / 4",
+            "choices": {
+                "A": "4",
+                "B": "6",
+                "C": "5",
+                "D": "8"
+            },
+            "answer": "C"
         }
     ]
 }
