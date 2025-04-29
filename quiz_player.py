@@ -1,6 +1,7 @@
 # Import libraries.
 import os
 import json
+import random
 
 # File location of the categories.
 file_name = "categories.json"
@@ -49,6 +50,9 @@ while True:
                 # Add short message.
                 print(f"{category_name} is successfully chosen.\n")
                 
+                # Randomize the questions.
+                random.shuffle(question_set)
+
                 # List down the question.
                 for number_question, question in enumerate(question_set, 0):
                     print(f"{number_question + 1}.) {question['question']}\n")
