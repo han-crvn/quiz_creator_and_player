@@ -39,6 +39,12 @@ while True:
                 # Allow users to choose from categories.
                 selected_choice = int(input("\nEnter the number of the chosen category: "))
 
+                # Access the category
+                category_name = list(data.keys())[selected_choice -1]
+                
+                # Add short message.
+                print(f"{category_name} is successfully chosen.\n")
+
             #Catch invalid input.
             except ValueError:
                 print("Invalid input! try again.")
