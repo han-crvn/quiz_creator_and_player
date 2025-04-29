@@ -51,7 +51,7 @@ while True:
                     question_set = data[chosen]
 
                 # Add short message.
-                print(f"{category_name} is successfully chosen.\n")
+                print(f"{chosen} is successfully chosen.\n")
                 
                 # Ask for the name of the users.
                 users_name = input("Enter your name: ")
