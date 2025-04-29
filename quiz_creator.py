@@ -1,4 +1,9 @@
 # Import Libraries.
+import os
+import json
+
+# File location of the categories.
+file_name = "categories.json"
 
 # Allow users to choose from the options.
 
