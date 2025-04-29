@@ -65,14 +65,14 @@ while True:
                     
                     # Verify if answer is correct.
                     if chosen_answer.upper() == correct_answer.upper():
-                        print("Right!")
+                        print("Right!\n")
 
                     else:
-                        print("Wrong!")
+                        print("Wrong!\n")
 
             #Catch invalid input.
             except ValueError:
-                print("Invalid input! try again.")
+                print("Invalid input! try again.\n")
 
         # If users choose option2, allow them to leave the program.
         if choice == 2:
@@ -80,4 +80,4 @@ while True:
     
     # Catch invalid input.
     except ValueError:
-        print("Invalid input! try again.")
+        print("Invalid input! try again.\n")
