@@ -5,6 +5,14 @@ import json
 # File location of the categories.
 file_name = "categories.json"
 
+# Access the file.
+if os.path.exists(file_name):
+    with open(file_name, "r") as file:
+        data = json.load(file)
+
+else:
+    data = {}
+
 # Allow users to choose from the options.
 while True:
     try:
@@ -14,8 +22,20 @@ while True:
 
         # If users choose option 1, allow them to add category.
         if choice == 1:
-            pass
-    
+            while True:
+                category = input("\nEnter the name of the category (0 to go back in main menu): ")
+                category = category.title()
+
+                if category not in data:
+                    data[category] = []
+                    print(f"{category} is successfully added!\n")
+
+                    with open(file_name, "w") as file:
+                        json.dump(data, file, indent = 4)
+
+                else:
+                    print(f"{category} already exists.")
+                    
         # If users choose option 2, allow them to access category and add question set.
         elif choice == 2:
             pass
