@@ -53,6 +53,9 @@ while True:
                 # Add short message.
                 print(f"{category_name} is successfully chosen.\n")
                 
+                # Ask for the name of the users.
+                users_name = input("Enter your name: ")
+
                 # Randomize the questions.
                 random.shuffle(question_set)
 
@@ -84,13 +87,13 @@ while True:
                 
                 # Show the score of the users.
                 if score == 5:
-                    print(f"Congratulations! You got {score}/{amount_questions}.")
+                    print(f"Congratulations {users_name.title()}! You got {score}/{amount_questions}.")
 
                 elif 2 < score <= 4:
-                    print(f"Nice Job! You got {score}/{amount_questions}.")
+                    print(f"Nice Job {users_name.title()}! You got {score}/{amount_questions}.")
 
                 elif score <= 2:
-                    print(f"Better Luck Next Time! You got {score}/{amount_questions}.")
+                    print(f"Better Luck Next Time {users_name.title()}! You got {score}/{amount_questions}.")
 
             #Catch invalid input.
             except ValueError:
