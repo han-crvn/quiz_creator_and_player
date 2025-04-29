@@ -155,7 +155,7 @@ while True:
 
                         # List down their history.
                         for number_entry, entry in enumerate(users_data, 1):
-                            print(f"{number_entry}. Category: {entry['Category']}\n   Score: {entry['Score']}/5\n   Date: {entry['Date']}")
+                            print(f"{number_entry}. Category: {entry['Category']}\n   Score: {entry['Score']}/5\n   Date & Time: {entry['Date']}")
                 
                 # Catch invalid input.
                 else:
