@@ -31,6 +31,10 @@ while True:
                 category = input("\nEnter the name of the category (0 to go back in main menu): ")
                 category = category.title()
 
+                # Allow users to suddenly break from the option.
+                if category == 0:
+                    break
+
                 # Check if the category is existing or not.
                 if category not in data:
                     data[category] = []
@@ -60,7 +64,11 @@ while True:
 
             try: 
                 # Allow users to choose from categories.
-                selected_choice = int(input("\nEnter the number of the chosen category: "))
+                selected_choice = int(input("\nEnter the number of the chosen category (0 to go back in main menu): "))
+
+                # Allow users to suddenly break from the option.
+                if selected_choice == 0:
+                    continue
 
                 # Access the category
                 category_name = list(data.keys())[selected_choice -1]
