@@ -97,13 +97,32 @@ while True:
                     with open(file_name, "w") as file:
                         json.dump(data, file, indent = 4)
 
+                    # Add short message.
+                    print("The question set is successfully added.\n")
+
+                    while True:
+                        try:
+                            # Ask users if they want to add more question set.
+                            try_again = int(input("Do you want to enter another question set (1 = Yes, 2 = No): "))
+
+                            if try_again == 1:
+                                continue
+
+                            elif try_again == 2:
+                                break
+                            
+                            else:
+                                print("Invalid input! try again.\n")
+
+                        # Catch invalid input.
+                        except ValueError:
+                            print("Invalid input! try again.\n")
+
                     break
 
             # Catch invalid input.
             except ValueError:
                 print("Invalid input! try again.\n")
-
-            break
 
         # If users choose option 3, allow them to exit the program.
         elif choice == 3:
