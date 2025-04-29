@@ -126,6 +126,7 @@ while True:
 
         # If users choose option 3, allow them to exit the program.
         elif choice == 3:
+            print("Goodbye! Thank you for using Quizzo.")
             break
     
     # Catch invalid input.
