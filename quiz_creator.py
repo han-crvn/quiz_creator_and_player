@@ -41,11 +41,21 @@ while True:
                     print(f"{category} already exists.")
 
                 break
-            
+
         # If users choose option 2, allow them to access category and add question set.
         elif choice == 2:
-            pass
-    
+            
+            # Check if there is category in file.
+            if not data:
+                print("\nThere are currently no categories.\n")
+                continue
+
+            print("\nCategories: ")
+            for number, category in enumerate(data.keys(), 1):
+                print(f"{number}. {category}")
+
+            break
+
         # If users choose option 3, allow them to exit the program.
         elif choice == 3:
             break
