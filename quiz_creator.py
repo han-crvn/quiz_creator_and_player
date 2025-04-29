@@ -13,6 +13,9 @@ if os.path.exists(file_name):
 else:
     data = {}
 
+# Add short opening message.
+print("Hello! This is Quizzo.")
+
 # Allow users to choose from the options.
 while True:
     try:
@@ -104,7 +107,7 @@ while True:
                         try:
                             # Ask users if they want to add more question set.
                             try_again = int(input("Do you want to enter another question set (1 = Yes, 2 = No): "))
-                            
+
                             if try_again == 1:
                                 continue
 
