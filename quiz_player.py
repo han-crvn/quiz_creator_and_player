@@ -14,6 +14,9 @@ if os.path.exists(file_name):
 else:
     data = {}
 
+# Add variables for score.
+score = 0
+
 # Allow users to choose from the options.
 while True:
     try:
@@ -54,7 +57,7 @@ while True:
                 random.shuffle(question_set)
 
                 # Limits the number of questions to be ask.
-                amount_questions = 2
+                amount_questions = 5
                 selected_questions = question_set[:min(amount_questions, len(question_set))]
 
                 # List down the question.
@@ -74,9 +77,20 @@ while True:
                     # Verify if answer is correct.
                     if chosen_answer.upper() == correct_answer.upper():
                         print("Right!\n")
+                        score += 1
 
                     else:
                         print("Wrong!\n")
+                
+                # Show the score of the users.
+                if score == 5:
+                    print(f"Congratulations! You got {score}/{amount_questions}.")
+
+                elif 2 < score <= 4:
+                    print(f"Nice Job! You got {score}/{amount_questions}.")
+
+                elif score <= 2:
+                    print(f"Better Luck Next Time! You got {score}/{amount_questions}.")
 
             #Catch invalid input.
             except ValueError:
