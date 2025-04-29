@@ -40,6 +40,8 @@ while True:
                 else:
                     print(f"{category} already exists.")
 
+                break
+            
         # If users choose option 2, allow them to access category and add question set.
         elif choice == 2:
             pass
