@@ -79,7 +79,7 @@ while True:
                 random.shuffle(question_set)
 
                 # Limits the number of questions to be ask.
-                amount_questions = 5
+                amount_questions = 10
                 selected_questions = question_set[:min(amount_questions, len(question_set))]
 
                 # List down the question.
@@ -105,13 +105,13 @@ while True:
                         print("Wrong!\n")
                 
                 # Show the score of the users.
-                if score == 5:
+                if score == 10:
                     print(f"Congratulations {users_name.title()}! You got {score}/{amount_questions}.")
 
-                elif 2 < score <= 4:
+                elif 5 < score <= 9:
                     print(f"Nice Job {users_name.title()}! You got {score}/{amount_questions}.")
 
-                elif score <= 2:
+                elif score <= 5:
                     print(f"Better Luck Next Time {users_name.title()}! You got {score}/{amount_questions}.")
 
                 # Append the data to data information.
