@@ -52,7 +52,7 @@ while True:
         # If users choose option 2, allow them to access category and add question set.
         elif choice == 2:
             
-            # Check if there is category in file.
+             # Check if there is category in file.
             if not data:
                 print("\nThere are currently no categories.\n")
                 continue
@@ -62,43 +62,66 @@ while True:
             for number, category in enumerate(data.keys(), 1):
                 print(f"{number}. {category}")
 
-            try: 
+            try:
+
                 # Allow users to choose from categories.
                 selected_choice = int(input("\nEnter the number of the chosen category (0 to go back in main menu): "))
 
-                # Allow users to suddenly break from the option.
+                 # Allow users to suddenly break from the option.
                 if selected_choice == 0:
                     continue
-
-                # Access the category
-                category_name = list(data.keys())[selected_choice -1]
                 
-                # Add short message.
+                # Access the category.
+                if selected_choice < 1 or selected_choice > len(data):
+                    print("Invalid category number! Returning to menu.")
+                    continue
+                
+                category_name = list(data.keys())[selected_choice - 1]
+                
+                # Short message.
                 print(f"{category_name} is successfully chosen.\n")
 
                 while True:
-
+                    
                     # Enter the question.
-                    question = input("Enter the question: ")
+                    question = input("Enter the question: ").strip()
+                    
+                    # Catch empty choices.
+                    if not question:
+                        print("\nQuestion cannot be empty. Try again.\n")
+                        continue
 
-                    # Enter the choices.
+                    # Add the choices to dictionary.
                     choices = {}
+
+                    # Loop the A, B, C, and D choices.
                     for number in range(4):
                         option = chr(65 + number)
-                        choices[option] = input(f"Enter choice '{option}': ")
-                    
+                        while True:
+                            
+                            # Allow users to input choices.
+                            choice_input = input(f"Enter choice '{option}': ").strip()
+                            
+                            # Chech the input.
+                            if choice_input:
+                                choices[option] = choice_input
+                                break
+                            
+                            # Catch empty choices.
+                            else:
+                                print("\nChoice cannot be empty. Try again.")
+
                     # Enter the correct answer.
                     while True:
-                        answer = input("Enter the correct answer: ").upper()
-
-                        # Check if the answer is in the choices.
+                        answer = input("Enter the correct answer (A, B, C, D): ").upper()
                         if answer in choices:
                             break
-
+                        
+                        # Catch invalid answer.
                         else:
-                           print("Invalid answer! try again.\n")
-                    
-                    # Add the question set to the chosen category.
+                            print("Invalid answer! Try again.\n")
+
+                    # Add question set
                     data[category_name].append({
                         "question": question,
                         "choices": choices,
@@ -106,35 +129,35 @@ while True:
                     })
 
                     with open(file_name, "w") as file:
-                        json.dump(data, file, indent = 4)
+                        json.dump(data, file, indent=4)
 
-                    # Add short message.
+                    # Short message.
                     print("The question set is successfully added.\n")
 
                     while True:
-                        try:
-                            # Ask users if they want to add more question set.
-                            try_again = int(input("Do you want to enter another question set (1 = Yes, 2 = No): "))
-
-                            if try_again == 1:
-                                continue
-
-                            elif try_again == 2:
-                                break
-                            
-                            # Catch invalid input.
-                            else:
-                                print("Invalid input! try again.\n")
-
+                        
+                        # Ask users if they want to add more question.
+                        try_again = input("\nDo you want to enter another question set (1 = Yes, 2 = No): ")
+                        
+                        # continue outer while loop to add another question.
+                        if try_again == "1":
+                            break
+                        
+                        # exit both inner loops
+                        elif try_again == "2":
+                            raise StopIteration
+                        
                         # Catch invalid input.
-                        except ValueError:
-                            print("Invalid input! try again.\n")
-
-                    break
-
+                        else:
+                            print("\nInvalid input! Try again.\n")
+            
             # Catch invalid input.
             except ValueError:
-                print("Invalid input! try again.\n")
+                print("Invalid input! Try again.\n")
+            
+            # Catch the looping.
+            except StopIteration:
+                pass
 
         # If users choose option 3, allow them to exit the program.
         elif choice == 3:
