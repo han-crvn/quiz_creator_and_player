@@ -35,6 +35,8 @@ print("Hi! This is Quizzo, How can I help you?")
 # Allow users to choose from the options.
 while True:
     try:
+        
+        # Print the options.
         print("\nSelection:")
         print("1. Play a Quiz \n2. View History \n3. Exit \n")
         
@@ -54,8 +56,7 @@ while True:
             for number, category in enumerate(data.keys(), 1):
                 print(f"{number}. {category}")
 
-            try: 
-                
+            try:               
                 while True:
                     # Allow users to choose from categories.
                     selected_choice = int(input("\nEnter the number of the chosen category: "))
@@ -86,7 +87,7 @@ while True:
                 # Randomize the questions.
                 random.shuffle(question_set)
 
-                # Limits the number of questions to be ask.
+                # Limits the number of questions to be ask to 10 if the questions is greater than 10.
                 amount_questions = 10
                 selected_questions = question_set[:min(amount_questions, len(question_set))]
 
@@ -166,7 +167,8 @@ while True:
             for number, name in enumerate(data_infos.keys(), 1):
                 print(f"{number}. {name}")
 
-            try: 
+            try:
+
                 # Allow users to choose from names.
                 selected_name = int(input("\nEnter the number of the chosen users' name: "))
 
