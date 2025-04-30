@@ -1,14 +1,10 @@
 {
     "Shane": [
         {
-            "Category": "Science",
-            "Score": 1,
-            "Date": "Tue Apr 29 20:31:34 2025"
-        },
-        {
             "Category": "Mathematics",
             "Score": 2,
-            "Date": "Tue Apr 29 20:31:46 2025"
+            "Date": "Wed Apr 30 18:15:40 2025",
+            "Average": "50.0 %"
         }
     ]
 }
