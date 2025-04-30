@@ -90,9 +90,19 @@ while True:
                     for number_choice, choices in question['choices'].items():
                         print(f"{number_choice}. {choices}")
 
-                    # Allow users to input their answer.
-                    chosen_answer = input("\nEnter the letter of correct answer: ")
+                    while True:
 
+                        # Allow users to input their answer.
+                        chosen_answer = input("\nEnter the letter of correct answer: ")
+
+                        # Check if users answer is in the options.
+                        if chosen_answer.upper() in ['A', 'B', 'C', 'D']:
+                            break
+
+                        else:
+                            print("Invalid input! Please enter A, B, C, or D only.")
+                            continue
+                        
                     # Access correct answer.
                     correct_answer = question['answer']
                     
@@ -154,7 +164,7 @@ while True:
 
                     # Check the history of the users and print it.
                     if users_data:
-                        print(f"\n{name}'s history: ")
+                        print(f"\n{chosen_name}'s history: ")
 
                         # List down their history.
                         for number_entry, entry in enumerate(users_data, 1):
