@@ -55,18 +55,26 @@ while True:
                 print(f"{number}. {category}")
 
             try: 
-                # Allow users to choose from categories.
-                selected_choice = int(input("\nEnter the number of the chosen category: "))
+                
+                while True:
+                    # Allow users to choose from categories.
+                    selected_choice = int(input("\nEnter the number of the chosen category: "))
 
-                # Access the category.
-                category_name = list(data.keys())
+                    # Access the category.
+                    category_name = list(data.keys())
 
-                if 1 <= selected_choice <= len(category_name):
-                    chosen = category_name[selected_choice - 1]
-                    question_set = data[chosen]
+                    if 1 <= selected_choice <= len(category_name):
+                        chosen = category_name[selected_choice - 1]
+                        question_set = data[chosen]
+                        break
+                    
+                    # Catch invalid input.
+                    else:
+                        print("\nInvalid input! try again.\n")
+                        continue
 
                 # Add short message.
-                print(f"{chosen} is successfully chosen.\n")
+                print(f"\n{chosen} is successfully chosen.\n")
                 
                 # Ask for the name of the users.
                 users_name = input("Enter your name: ")
@@ -100,7 +108,7 @@ while True:
                             break
 
                         else:
-                            print("Invalid input! Please enter A, B, C, or D only.")
+                            print("\nInvalid input! Please enter A, B, C, or D only.")
                             continue
 
                     # Access correct answer.
@@ -108,11 +116,11 @@ while True:
                     
                     # Verify if answer is correct.
                     if chosen_answer.upper() == correct_answer.upper():
-                        print("Right!\n")
+                        print("\nRight!\n")
                         score += 1
 
                     else:
-                        print("Wrong!\n")
+                        print("\nWrong!\n")
 
                 # Get the average.
                 percentage_score = (score / (number_question + 1)) * 100
@@ -121,16 +129,19 @@ while True:
                 if 90  <= percentage_score <= 100:
                     print(f"Congratulations {users_name.title()}! You got {score}/{number_question + 1} with an average of {percentage_score:.2f} %.")
 
-                elif 75 <= percentage_score < 90:
+                elif 50 <= percentage_score < 90:
                     print(f"Nice Job {users_name.title()}! You got {score}/{number_question + 1} with an average of {percentage_score:.2f} %.")
 
-                elif score < 75:
+                elif percentage_score < 50:
                     print(f"Better Luck Next Time {users_name.title()}! You got {score}/{number_question + 1} with an average of {percentage_score:.2f} %.")
+
+                elif percentage_score == 0:
+                    print(f"You better study more {users_name.title()}! You got {score}/{number_question + 1} with an average of {percentage_score:.2f} %.")
 
                 # Append the data to data information.
                 data_infos[users_name].append({
                     "Category": chosen,
-                    "Score": score,
+                    "Score": f"{score}/{number_question + 1}",
                     "Date": time.ctime(),
                     "Average": str(percentage_score) + " %"
                 })
@@ -172,7 +183,7 @@ while True:
 
                         # List down their history.
                         for number_entry, entry in enumerate(users_data, 1):
-                            print(f"{number_entry}. Category: {entry['Category']}\n   Score: {entry['Score']}/5\n   Date & Time: {entry['Date']}\n   Average: {entry['Average']}")
+                            print(f"{number_entry}. Category: {entry['Category']}\n   Score: {entry['Score']}\n   Date & Time: {entry['Date']}\n   Average: {entry['Average']}")
                 
                 # Catch invalid input.
                 else:
@@ -184,9 +195,13 @@ while True:
 
         # If users choose option 3, allow them to leave the program.
         elif choice == 3:
-            print("Goodbye! Thank you for using Quizzo!")
+            print("\nGoodbye! Thank you for using Quizzo!")
             break
+        
+        # Catch invalid input.
+        else:
+           print("\nInvalid input! try again.")
 
     # Catch invalid input.
     except ValueError:
-        print("Invalid input! try again.\n")
+        print("\nInvalid input! try again.")
