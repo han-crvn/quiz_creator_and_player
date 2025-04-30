@@ -102,7 +102,7 @@ while True:
                         else:
                             print("Invalid input! Please enter A, B, C, or D only.")
                             continue
-                        
+
                     # Access correct answer.
                     correct_answer = question['answer']
                     
@@ -113,22 +113,26 @@ while True:
 
                     else:
                         print("Wrong!\n")
-                
-                # Show the score of the users.
-                if score == 10:
-                    print(f"Congratulations {users_name.title()}! You got {score}/{amount_questions}.")
 
-                elif 5 < score <= 9:
-                    print(f"Nice Job {users_name.title()}! You got {score}/{amount_questions}.")
+                # Get the average.
+                percentage_score = (score / (number_question + 1)) * 100
 
-                elif score <= 5:
-                    print(f"Better Luck Next Time {users_name.title()}! You got {score}/{amount_questions}.")
+                # Calcuate where the average fall and print the result.
+                if 90  <= percentage_score <= 100:
+                    print(f"Congratulations {users_name.title()}! You got {score}/{number_question + 1} with an average of {percentage_score:.2f} %.")
+
+                elif 75 <= percentage_score < 90:
+                    print(f"Nice Job {users_name.title()}! You got {score}/{number_question + 1} with an average of {percentage_score:.2f} %.")
+
+                elif score < 75:
+                    print(f"Better Luck Next Time {users_name.title()}! You got {score}/{number_question + 1} with an average of {percentage_score:.2f} %.")
 
                 # Append the data to data information.
                 data_infos[users_name].append({
                     "Category": chosen,
                     "Score": score,
-                    "Date": time.ctime()
+                    "Date": time.ctime(),
+                    "Average": str(percentage_score) + " %"
                 })
 
                 with open(data_information, "w") as file:
@@ -168,7 +172,7 @@ while True:
 
                         # List down their history.
                         for number_entry, entry in enumerate(users_data, 1):
-                            print(f"{number_entry}. Category: {entry['Category']}\n   Score: {entry['Score']}/5\n   Date & Time: {entry['Date']}")
+                            print(f"{number_entry}. Category: {entry['Category']}\n   Score: {entry['Score']}/5\n   Date & Time: {entry['Date']}\n   Average: {entry['Average']}")
                 
                 # Catch invalid input.
                 else:
