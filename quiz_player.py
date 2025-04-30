@@ -29,6 +29,9 @@ else:
 # Add variables for score.
 score = 0
 
+# Short intro message.
+print("Hi! This is Quizzo, How can I help you?")
+
 # Allow users to choose from the options.
 while True:
     try:
@@ -167,6 +170,7 @@ while True:
 
         # If users choose option 3, allow them to leave the program.
         elif choice == 3:
+            print("Goodbye! Thank you for using Quizzo!")
             break
 
     # Catch invalid input.
