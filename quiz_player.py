@@ -58,6 +58,7 @@ while True:
 
             try:               
                 while True:
+                    
                     # Allow users to choose from categories.
                     selected_choice = int(input("\nEnter the number of the chosen category: "))
 
