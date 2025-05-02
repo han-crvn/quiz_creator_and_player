@@ -64,6 +64,7 @@ while True:
                     # Access the category.
                     category_name = list(data.keys())
 
+                    # Adjust choice since index starts at 0.
                     if 1 <= selected_choice <= len(category_name):
                         chosen = category_name[selected_choice - 1]
                         question_set = data[chosen]
@@ -80,7 +81,7 @@ while True:
                 # Ask for the name of the users.
                 users_name = input("Enter your name: ")
 
-                # Initialize user data if not present
+                # Initialize user data if not present.
                 if users_name not in data_infos:
                     data_infos[users_name] = []
 
@@ -107,7 +108,8 @@ while True:
                         # Check if users answer is in the options.
                         if chosen_answer.upper() in ['A', 'B', 'C', 'D']:
                             break
-
+                        
+                        # Catch invalid input.
                         else:
                             print("\nInvalid input! Please enter A, B, C, or D only.")
                             continue
@@ -150,7 +152,7 @@ while True:
                 with open(data_information, "w") as file:
                     json.dump(data_infos, file, indent = 4)
 
-            #Catch invalid input.
+            # Catch invalid input.
             except ValueError:
                 print("Invalid input! try again.\n")
 
