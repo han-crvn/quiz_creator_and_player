@@ -108,8 +108,8 @@ while True:
                         # Check if users answer is in the options.
                         if chosen_answer.upper() in ['A', 'B', 'C', 'D']:
                             break
-                        
-                        # Catch invalid input.
+
+                        # Catch invalid input.                      
                         else:
                             print("\nInvalid input! Please enter A, B, C, or D only.")
                             continue
@@ -177,6 +177,7 @@ while True:
                 # Access the name.
                 access_users = list(data_infos.keys())
 
+                # Adjust choice since index starts at 0.
                 if 1 <= selected_name <= len(access_users):
                     chosen_name = access_users[selected_name - 1]
                     users_data = data_infos[chosen_name]
